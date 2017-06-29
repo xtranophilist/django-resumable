@@ -44,8 +44,7 @@ class ResumableFileInput(FileInput):
         return files.get(name, None)
 
     def render(self, name, value, attrs=None, **kwargs):
-        attrs = self.build_attrs(attrs)
-
+        attrs = self.build_attrs(attrs, self.attrs)
         if 'required' in attrs:
             del attrs['required']
 
